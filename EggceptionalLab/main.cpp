@@ -61,7 +61,6 @@ public:
 		}
 		else {
 			std::cout << "The carton is full!\n";
-			delete egg;
 		}
 	}
 
@@ -80,17 +79,15 @@ public:
 		catch (const bad_egg& e) {
 			std::cout << "ERROR: " << e.what() << "\n";
 		}
-
-		delete currentEgg;
 	}
 };
 
 int main() {
 	Carton myCarton;
 
-	myCarton.addEgg(new TastyEgg(2));
+	myCarton.addEgg(new TastyEgg(1));
 	myCarton.addEgg(new RottenEgg(1));
-	myCarton.addEgg(new HardboiledEgg(3));
+	myCarton.addEgg(new HardboiledEgg(1));
 
 	myCarton.takeEgg();
 	myCarton.takeEgg();
